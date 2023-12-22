@@ -10,12 +10,12 @@ on:
       release: 
         description: 将编译出的镜像上传到 Release
         required: false
-        default: 'false'
+        default: 'true'
 
 env:
   DOWNLOAD_BASE: https://downloads.immortalwrt.org
   VENDOR: immortalwrt
-  VERSION: 23.05.01
+  VERSION: 23.05.1
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
