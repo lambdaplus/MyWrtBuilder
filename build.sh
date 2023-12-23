@@ -25,7 +25,7 @@ PACKAGES="$PACKAGES luci-i18n-statistics-zh-cn"
 # OpenClash 代理
 # PACKAGES="$PACKAGES luci-app-openclash"
 # Passwall 代理
-PACKAGES="$PACKAGES luci-i18n-passwall-zh-cn"
+# PACKAGES="$PACKAGES luci-i18n-passwall-zh-cn"
 # frp 和 nps 内网穿透
 # PACKAGES="$PACKAGES luci-i18n-nps-zh-cn luci-i18n-frpc-zh-cn"
 
@@ -54,9 +54,9 @@ PACKAGES="$PACKAGES luci-i18n-dockerman-zh-cn luci-i18n-docker-zh-cn"
 # VPN 类
 
 # IPSec VPN
-PACKAGES="$PACKAGES luci-i18n-ipsec-vpnd-zh-cn"
+# PACKAGES="$PACKAGES luci-i18n-ipsec-vpnd-zh-cn"
 # Zerotier
-PACKAGES="$PACKAGES luci-i18n-zerotier-zh-cn"
+# PACKAGES="$PACKAGES luci-i18n-zerotier-zh-cn"
 
 # 网络组件
 
