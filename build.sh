@@ -72,6 +72,8 @@ PACKAGES="$PACKAGES luci-proto-wireguard"
 
 # 网络组件
 
+# IPV6支持
+PACKAGES="$PACKAGES luci-proto-ipv6"
 # EQoS 网速控制
 PACKAGES="$PACKAGES luci-i18n-eqos-zh-cn"
 # AppFilter
