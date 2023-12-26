@@ -1,10 +1,8 @@
-#!/bin/bash
-
 # 打印 info
 make info
 
 # 主配置名称
-PROFILE="generic"
+PROFILE="generic x86/64"
 
 PACKAGES=""
 
@@ -24,10 +22,14 @@ PACKAGES="$PACKAGES luci-i18n-statistics-zh-cn"
 
 # OpenClash 代理
 # PACKAGES="$PACKAGES luci-app-openclash"
+# DAED 代理
+PACKAGES="$PACKAGES luci-i18n-daed-zh-cn"
 # Passwall 代理
 # PACKAGES="$PACKAGES luci-i18n-passwall-zh-cn"
 # frp 和 nps 内网穿透
 # PACKAGES="$PACKAGES luci-i18n-nps-zh-cn luci-i18n-frpc-zh-cn"
+# DDNS
+PACKAGES="$PACKAGES luci-i18n-ddns-go-zh-cn"
 
 # 常用的网络存储组件
 
@@ -47,6 +49,14 @@ PACKAGES="$PACKAGES luci-i18n-qbittorrent-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-aria2-zh-cn"
 # FTP 服务器
 PACKAGES="$PACKAGES luci-i18n-vsftpd-zh-cn"
+# 端口转发
+PACKAGES="$PACKAGES luci-i18n-socat-zh-cn"
+# TTYD
+PACKAGES="$PACKAGES luci-i18n-ttyd-zh-cn"
+# WechatPush
+PACKAGES="$PACKAGES luci-i18n-wechatpush-zh-cn"
+# watchcat
+PACKAGES="$PACKAGES luci-i18n-watchcat-zh-cn"
 
 # Docker 组件
 PACKAGES="$PACKAGES luci-i18n-dockerman-zh-cn luci-i18n-docker-zh-cn"
@@ -57,24 +67,28 @@ PACKAGES="$PACKAGES luci-i18n-dockerman-zh-cn luci-i18n-docker-zh-cn"
 # PACKAGES="$PACKAGES luci-i18n-ipsec-vpnd-zh-cn"
 # Zerotier
 # PACKAGES="$PACKAGES luci-i18n-zerotier-zh-cn"
+# WireGuard
+PACKAGES="$PACKAGES luci-proto-wireguard"
 
 # 网络组件
 
 # EQoS 网速控制
 PACKAGES="$PACKAGES luci-i18n-eqos-zh-cn"
+# AppFilter
+PACKAGES="$PACKAGES luci-i18n-appfilter-zh-cn"
 # 多线多拨与负载均衡
 # PACKAGES="$PACKAGES luci-app-syncdial luci-i18n-mwan3-zh-cn"
 # 宽带监控 Nlbwmon
 # PACKAGES="$PACKAGES luci-i18n-nlbwmon-zh-cn"
 
 # 界面翻译补全
-PACKAGES="$PACKAGES luci-i18n-opkg-zh-cn luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn" # luci-i18n-turboacc-zh-cn"
+# PACKAGES="$PACKAGES luci-i18n-opkg-zh-cn luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn" # luci-i18n-turboacc-zh-cn"
 
 # Packages 文件夹下的 ipk 包
-PACKAGES="$PACKAGES luci-i18n-wrtbwmon-zh-cn"
+# PACKAGES="$PACKAGES luci-i18n-wrtbwmon-zh-cn"
 
 # 一些自己需要的内核组件
-PACKAGES="$PACKAGES kmod-usb-printer kmod-lp"
+PACKAGES="$PACKAGES kmod-usb-printer kmod-tun kmod-wireguard"
 
 # 一些其他可能有用的包
 
@@ -85,7 +99,7 @@ PACKAGES="$PACKAGES vim-fuller"
 # X/Y/ZMODEM 文件传输
 PACKAGES="$PACKAGES lrzsz"
 # OpenSSH
-PACKAGES="$PACKAGES openssh-server openssh-client"
+# PACKAGES="$PACKAGES openssh-server openssh-client"
 # Netdata 系统监控界面
 PACKAGES="$PACKAGES netdata"
 
@@ -93,6 +107,5 @@ PACKAGES="$PACKAGES netdata"
 FILES="files"
 
 # 禁用 openssh-server 的 sshd 服务和 docker 的 dockerd 服务以防止冲突
-DISABLED_SERVICES="sshd dockerd"
-
+DISABLED_SERVICES="dockerd"
 make image PROFILE="$PROFILE" PACKAGES="$PACKAGES" FILES="$FILES" DISABLED_SERVICES="$DISABLED_SERVICES"
