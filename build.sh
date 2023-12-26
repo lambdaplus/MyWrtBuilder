@@ -87,6 +87,10 @@ PACKAGES="$PACKAGES luci-i18n-appfilter-zh-cn"
 # Packages 文件夹下的 ipk 包
 # PACKAGES="$PACKAGES luci-i18n-wrtbwmon-zh-cn"
 
+# 网卡支持
+# Android/iOS 共享网络
+PACKAGES="$PACKAGES kmod-usb-net-rndis kmod-usb-net-ipheth usbmuxd"
+
 # 一些自己需要的内核组件
 PACKAGES="$PACKAGES kmod-usb-printer kmod-tun kmod-wireguard"
 
