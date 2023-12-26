@@ -1,0 +1,33 @@
+
+config global 'global'
+	option enable '1'
+
+config config '8e7cd93915ae4c03892f87815409a661'
+	option enable '0'
+	option firewall_accept '1'
+
+config config '9ef73c0b3c7f475ca5ad994b5d5fd506'
+	option enable '1'
+	option firewall_accept '1'
+	option remarks '远程访问'
+	option protocol 'port_forwards'
+	option proto 'tcp'
+	option listen_port '8080'
+	option reuseaddr '0'
+	option dest_proto 'tcp4'
+	option dest_ip '192.168.123.1'
+	option dest_port '80'
+	option family '6'
+
+config config 'f58a7c09d4654e63b9c2d7c73929ff76'
+	option enable '1'
+	option firewall_accept '1'
+	option remarks 'ssh'
+	option protocol 'port_forwards'
+	option proto 'tcp'
+	option listen_port '18822'
+	option reuseaddr '1'
+	option dest_proto 'tcp4'
+	option dest_ip '192.168.123.1'
+	option dest_port '22'
+
