@@ -1,0 +1,56 @@
+
+config interface 'loopback'
+	option device 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config globals 'globals'
+	option packet_steering '1'
+
+config device
+	option name 'br-lan'
+	option type 'bridge'
+	list ports 'eth0'
+
+config interface 'lan'
+	option device 'br-lan'
+	option proto 'static'
+	option ipaddr '192.168.123.1'
+	option netmask '255.255.255.0'
+	option ip6assign '64'
+
+config interface 'wan'
+	option device 'eth1'
+	option proto 'dhcp'
+
+config interface 'wan6'
+	option proto 'dhcpv6'
+	option device 'eth1'
+	option reqaddress 'try'
+	option reqprefix 'auto'
+
+config interface 'wg'
+	option proto 'wireguard'
+	option private_key 'KHBM81COCOQ5eWgkj04m7wOKaQU3PgjBE0o7g4D8hmo='
+	option listen_port '51820'
+	list addresses '10.0.0.1/24'
+
+config wireguard_wg
+	option description 'Remote Peer'
+	option public_key 'Ck6o8jHhd9WrirydwDd4FcMKpEoPa/u9vQ2x2f7U6Vc='
+	option preshared_key 'vPw4VQsR7hf+8WpV08qj+xIqxUWNTbQBYWPt02qIQ3g='
+	option route_allowed_ips '1'
+	option endpoint_port '51820'
+	option persistent_keepalive '25'
+	list allowed_ips '10.0.0.1/24'
+
+config interface 'docker'
+	option device 'docker0'
+	option proto 'none'
+	option auto '0'
+
+config device
+	option type 'bridge'
+	option name 'docker0'
+
