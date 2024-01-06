@@ -4,9 +4,6 @@ config defaults
 	option output 'ACCEPT'
 	option forward 'ACCEPT'
 	option flow_offloading '1'
-	option flow_offloading_hw '1'
-	option fullcone '1'
-	option fullcone6 '1'
 	option synflood_protect '1'
 
 config zone
@@ -20,7 +17,7 @@ config zone
 
 config zone
 	option name 'wan'
-	option input 'ACCEPT'
+	option input 'REJECT'
 	option output 'ACCEPT'
 	option forward 'ACCEPT'
 	option mtu_fix '1'
@@ -156,13 +153,63 @@ config redirect
 	option name 'wg转发'
 	list proto 'udp'
 	option src 'wan'
-	option src_dport '52820'
+	option src_dport '51820'
 	option dest_ip '192.168.123.1'
-	option dest_port '52820'
+	option dest_port '51820'
 
 config forwarding
 	option src 'lan'
 	option dest 'wan'
+
+config include 'udp2raw'
+	option type 'script'
+	option path '/var/etc/udp2raw.include'
+	option reload '1'
+
+config rule
+	option name 'ipv6'
+	option src 'wan'
+	option dest_port '8080'
+	option target 'ACCEPT'
+	option enabled '0'
+
+config zone 'docker'
+	option input 'ACCEPT'
+	option output 'ACCEPT'
+	option forward 'ACCEPT'
+	option name 'docker'
+	list network 'docker'
+
+config redirect
+	option dest 'lan'
+	option target 'DNAT'
+	option name 'Yacd'
+	option src 'wan'
+	option src_dport '9090'
+	option dest_ip '192.168.123.1'
+	option dest_port '9090'
+
+config include 'homeproxy_pre'
+	option type 'nftables'
+	option path '/var/run/homeproxy/fw4_pre.nft'
+	option position 'table-pre'
+
+config include 'homeproxy_post'
+	option type 'nftables'
+	option path '/var/run/homeproxy/fw4_post.nft'
+	option position 'table-post'
+
+config rule
+	option name '远程ipv6回家'
+	option dest_port '33333'
+	option target 'ACCEPT'
+	option src 'wan'
+
+config rule
+	option name 'Socks代理'
+	option src 'wan'
+	option dest_port '1080'
+	option target 'ACCEPT'
 
 config include 'passwall'
 	option type 'script'
@@ -174,32 +221,31 @@ config include 'passwall_server'
 	option path '/var/etc/passwall_server.include'
 	option reload '1'
 
-config include 'udp2raw'
-	option type 'script'
-	option path '/var/etc/udp2raw.include'
-	option reload '1'
-
-config redirect
-	option dest 'lan'
-	option target 'DNAT'
-	option name '远程访问'
-	option family 'ipv6'
-	list proto 'tcp'
-	option src 'wan'
-	option src_dport '8080'
-	option dest_ip 'fe80::96c6:91ff:fe1f:9366'
-	option dest_port '80'
-
 config rule
-	option name 'ipv6'
+	option name 'ssh'
 	option src 'wan'
-	option dest_port '8080'
+	option dest_port '18822'
 	option target 'ACCEPT'
 
-config zone 'docker'
-	option input 'ACCEPT'
-	option output 'ACCEPT'
-	option forward 'ACCEPT'
-	option name 'docker'
-	list network 'docker'
+config rule
+	option name 'daed-next'
+	option src 'wan'
+	option dest_port '3000'
+	option target 'ACCEPT'
+
+config rule
+	option name 'glider'
+	option src 'wan'
+	option dest_port '4223'
+	option target 'ACCEPT'
+
+config forwarding
+	option src 'wan'
+	option dest 'lan'
+
+config rule
+	option name 'daed'
+	option src 'wan'
+	option dest_port '4049'
+	option target 'ACCEPT'
 

@@ -43,7 +43,7 @@ config wireguard_wg
 	option route_allowed_ips '1'
 	option endpoint_port '51820'
 	option persistent_keepalive '25'
-	list allowed_ips '10.0.0.1/24'
+	list allowed_ips '10.0.0.2/32'
 
 config interface 'docker'
 	option device 'docker0'
