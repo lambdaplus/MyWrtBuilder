@@ -45,12 +45,3 @@ config wireguard_wg
 	option persistent_keepalive '25'
 	list allowed_ips '10.0.0.2/32'
 
-config interface 'docker'
-	option device 'docker0'
-	option proto 'none'
-	option auto '0'
-
-config device
-	option type 'bridge'
-	option name 'docker0'
-

@@ -3,23 +3,22 @@ config defaults
 	option input 'ACCEPT'
 	option output 'ACCEPT'
 	option forward 'ACCEPT'
-	option flow_offloading '1'
 	option synflood_protect '1'
+	option fullcone '1'
+	option fullcone6 '1'
 
 config zone
 	option name 'lan'
 	option input 'ACCEPT'
 	option output 'ACCEPT'
 	option forward 'ACCEPT'
-	list network 'lan'
-	list network 'wg'
-	option masq '1'
+	option network 'lan wg utun'
 
 config zone
 	option name 'wan'
 	option input 'REJECT'
 	option output 'ACCEPT'
-	option forward 'ACCEPT'
+	option forward 'REJECT'
 	option mtu_fix '1'
 	option masq '1'
 	list network 'wan'
@@ -147,16 +146,6 @@ config rule
 	option dest_port '51820'
 	option target 'ACCEPT'
 
-config redirect
-	option dest 'lan'
-	option target 'DNAT'
-	option name 'wg转发'
-	list proto 'udp'
-	option src 'wan'
-	option src_dport '51820'
-	option dest_ip '192.168.123.1'
-	option dest_port '51820'
-
 config forwarding
 	option src 'lan'
 	option dest 'wan'
@@ -169,25 +158,8 @@ config include 'udp2raw'
 config rule
 	option name 'ipv6'
 	option src 'wan'
-	option dest_port '8080'
+	option dest_port '30000'
 	option target 'ACCEPT'
-	option enabled '0'
-
-config zone 'docker'
-	option input 'ACCEPT'
-	option output 'ACCEPT'
-	option forward 'ACCEPT'
-	option name 'docker'
-	list network 'docker'
-
-config redirect
-	option dest 'lan'
-	option target 'DNAT'
-	option name 'Yacd'
-	option src 'wan'
-	option src_dport '9090'
-	option dest_ip '192.168.123.1'
-	option dest_port '9090'
 
 config include 'homeproxy_pre'
 	option type 'nftables'
@@ -200,26 +172,10 @@ config include 'homeproxy_post'
 	option position 'table-post'
 
 config rule
-	option name '远程ipv6回家'
-	option dest_port '33333'
-	option target 'ACCEPT'
-	option src 'wan'
-
-config rule
 	option name 'Socks代理'
 	option src 'wan'
 	option dest_port '1080'
 	option target 'ACCEPT'
-
-config include 'passwall'
-	option type 'script'
-	option path '/var/etc/passwall.include'
-	option reload '1'
-
-config include 'passwall_server'
-	option type 'script'
-	option path '/var/etc/passwall_server.include'
-	option reload '1'
 
 config rule
 	option name 'ssh'
@@ -236,16 +192,34 @@ config rule
 config rule
 	option name 'glider'
 	option src 'wan'
-	option dest_port '4223'
+	option dest_port '8443'
 	option target 'ACCEPT'
-
-config forwarding
-	option src 'wan'
-	option dest 'lan'
 
 config rule
 	option name 'daed'
 	option src 'wan'
-	option dest_port '4049'
+	option dest_port '4046'
 	option target 'ACCEPT'
+
+config rule
+	option name 'yacd'
+	option src 'wan'
+	option dest_port '9191'
+	option target 'ACCEPT'
+
+config rule
+	option name 'shellclash'
+	option src 'wan'
+	option dest_port '2048'
+	option target 'ACCEPT'
+
+config include 'passwall'
+	option type 'script'
+	option path '/var/etc/passwall.include'
+	option reload '1'
+
+config include 'passwall_server'
+	option type 'script'
+	option path '/var/etc/passwall_server.include'
+	option reload '1'
 
