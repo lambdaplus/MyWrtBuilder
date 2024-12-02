@@ -94,7 +94,7 @@ PACKAGES="$PACKAGES luci-i18n-appfilter-zh-cn"
 PACKAGES="$PACKAGES kmod-usb-net-rndis kmod-usb-net-ipheth usbmuxd"
 
 # 一些自己需要的内核组件
-PACKAGES="$PACKAGES kmod-usb-printer kmod-tun kmod-wireguard"
+PACKAGES="$PACKAGES kmod-usb-printer kmod-tun kmod-wireguard kmod-nft-tproxy"
 
 # 一些其他可能有用的包
 
