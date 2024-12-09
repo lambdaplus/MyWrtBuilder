@@ -7,7 +7,7 @@ PROFILE="generic x86/64"
 PACKAGES=""
 
 # Argon 主题
-# PACKAGES="$PACKAGES luci-theme-argon luci-i18n-argon-config-zh-cn"
+PACKAGES="$PACKAGES luci-theme-argon luci-i18n-argon-config-zh-cn"
 
 # 常用系统管理组件
 
