@@ -7,16 +7,16 @@ PROFILE="generic x86/64"
 PACKAGES=""
 
 # Argon 主题
-PACKAGES="$PACKAGES luci-theme-argon luci-i18n-argon-config-zh-cn"
+# PACKAGES="$PACKAGES luci-theme-argon luci-i18n-argon-config-zh-cn"
 
 # 常用系统管理组件
 
 # Diskman 磁盘管理
-PACKAGES="$PACKAGES luci-i18n-diskman-zh-cn"
+# PACKAGES="$PACKAGES luci-i18n-diskman-zh-cn"
 # CPU 占用限制
-PACKAGES="$PACKAGES luci-i18n-cpulimit-zh-cn"
+# PACKAGES="$PACKAGES luci-i18n-cpulimit-zh-cn"
 # collectd 统计
-PACKAGES="$PACKAGES luci-i18n-statistics-zh-cn"
+# PACKAGES="$PACKAGES luci-i18n-statistics-zh-cn"
 
 # 常用软件服务
 
@@ -34,29 +34,29 @@ PACKAGES="$PACKAGES luci-i18n-ddns-go-zh-cn"
 # 常用的网络存储组件
 
 # 文件助手
-PACKAGES="$PACKAGES luci-app-fileassistant"
+#PACKAGES="$PACKAGES luci-app-fileassistant"
 # 硬盘休眠
-PACKAGES="$PACKAGES luci-i18n-hd-idle-zh-cn"
+#PACKAGES="$PACKAGES luci-i18n-hd-idle-zh-cn"
 # p910nd 打印服务器
-PACKAGES="$PACKAGES luci-i18n-p910nd-zh-cn"
+#PACKAGES="$PACKAGES luci-i18n-p910nd-zh-cn"
 # GoWebDav
 # PACKAGES="$PACKAGES luci-i18n-gowebdav-zh-cn"
 # Samba 网络共享
-PACKAGES="$PACKAGES luci-i18n-samba4-zh-cn"
+#PACKAGES="$PACKAGES luci-i18n-samba4-zh-cn"
 # qBittorrent 下载器
-PACKAGES="$PACKAGES luci-i18n-qbittorrent-zh-cn"
+#PACKAGES="$PACKAGES luci-i18n-qbittorrent-zh-cn"
 # Aria2 下载器
-PACKAGES="$PACKAGES luci-i18n-aria2-zh-cn"
+#PACKAGES="$PACKAGES luci-i18n-aria2-zh-cn"
 # FTP 服务器
-PACKAGES="$PACKAGES luci-i18n-vsftpd-zh-cn"
+#PACKAGES="$PACKAGES luci-i18n-vsftpd-zh-cn"
 # 端口转发
 PACKAGES="$PACKAGES luci-i18n-socat-zh-cn"
 # TTYD
-PACKAGES="$PACKAGES luci-i18n-ttyd-zh-cn"
+#PACKAGES="$PACKAGES luci-i18n-ttyd-zh-cn"
 # WechatPush
-PACKAGES="$PACKAGES luci-i18n-wechatpush-zh-cn"
+#PACKAGES="$PACKAGES luci-i18n-wechatpush-zh-cn"
 # watchcat
-PACKAGES="$PACKAGES luci-i18n-watchcat-zh-cn"
+#PACKAGES="$PACKAGES luci-i18n-watchcat-zh-cn"
 
 # Docker 组件
 # PACKAGES="$PACKAGES luci-i18n-dockerman-zh-cn luci-i18n-docker-zh-cn"
@@ -75,7 +75,7 @@ PACKAGES="$PACKAGES luci-proto-wireguard"
 # IPV6支持
 PACKAGES="$PACKAGES luci-proto-ipv6"
 # EQoS 网速控制
-PACKAGES="$PACKAGES luci-i18n-eqos-zh-cn"
+#PACKAGES="$PACKAGES luci-i18n-eqos-zh-cn"
 # AppFilter
 PACKAGES="$PACKAGES luci-i18n-appfilter-zh-cn"
 # 多线多拨与负载均衡
@@ -107,10 +107,10 @@ PACKAGES="$PACKAGES lrzsz"
 # OpenSSH
 # PACKAGES="$PACKAGES openssh-server openssh-client"
 # Netdata 系统监控界面
-PACKAGES="$PACKAGES netdata"
+#PACKAGES="$PACKAGES netdata"
 
 # 一些自定义文件
-FILES="files"
+#FILES="files"
 
 # 禁用 openssh-server 的 sshd 服务和 docker 的 dockerd 服务以防止冲突
 DISABLED_SERVICES="dockerd"
