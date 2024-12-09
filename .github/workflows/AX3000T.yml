@@ -54,10 +54,10 @@ jobs:
         run: |
           cat external-package-urls.txt | xargs wget -P packages
       
-      - name: Run Patch and DIY Scripts
-        working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-mediatek-filogic.Linux-x86_64
-        run: |
-          bash scripts/builder-patch.sh
+      # - name: Run Patch and DIY Scripts
+      #   working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-mediatek-filogic.Linux-x86_64
+      #   run: |
+          # bash scripts/builder-patch.sh
           # bash scripts/clash.sh
           # bash scripts/zsh.sh
 
