@@ -3,8 +3,9 @@
 echo "Start Builder Patch !"
 echo "Current Path: $PWD"
 
-cd $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-x86-64.Linux-x86_64 || exit
-
+# cd $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-x86-64.Linux-x86_64 || exit
+cd $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-mediatek-filogic.Linux-x86_64 || exit
+                     
 # fix bios boot partition is under 1 MiB
 sed -i 's/256/1024/g' target/linux/x86/image/Makefile
 
