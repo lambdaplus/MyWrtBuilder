@@ -7,7 +7,7 @@ PROFILE="generic x86/64"
 PACKAGES=""
 
 # Argon 主题
-#PACKAGES="$PACKAGES luci-theme-argon luci-i18n-argon-config-zh-cn"
+PACKAGES="$PACKAGES luci-theme-argon luci-i18n-argon-config-zh-cn"
 
 # 常用系统管理组件
 
@@ -23,13 +23,13 @@ PACKAGES=""
 # OpenClash 代理
 # PACKAGES="$PACKAGES luci-app-openclash"
 # DAED 代理
-#PACKAGES="$PACKAGES luci-i18n-daed-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-daed-zh-cn"
 # Passwall 代理
 # PACKAGES="$PACKAGES luci-i18n-passwall-zh-cn"
 # frp 和 nps 内网穿透
 # PACKAGES="$PACKAGES luci-i18n-nps-zh-cn luci-i18n-frpc-zh-cn"
 # DDNS
-#PACKAGES="$PACKAGES luci-i18n-ddns-go-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-ddns-go-zh-cn"
 
 # 常用的网络存储组件
 
@@ -42,7 +42,7 @@ PACKAGES=""
 # GoWebDav
 # PACKAGES="$PACKAGES luci-i18n-gowebdav-zh-cn"
 # Samba 网络共享
-#PACKAGES="$PACKAGES luci-i18n-samba4-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-samba4-zh-cn"
 # qBittorrent 下载器
 #PACKAGES="$PACKAGES luci-i18n-qbittorrent-zh-cn"
 # Aria2 下载器
@@ -50,7 +50,7 @@ PACKAGES=""
 # FTP 服务器
 #PACKAGES="$PACKAGES luci-i18n-vsftpd-zh-cn"
 # 端口转发
-#PACKAGES="$PACKAGES luci-i18n-socat-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-socat-zh-cn"
 # TTYD
 #PACKAGES="$PACKAGES luci-i18n-ttyd-zh-cn"
 # WechatPush
@@ -68,7 +68,7 @@ PACKAGES=""
 # Zerotier
 # PACKAGES="$PACKAGES luci-i18n-zerotier-zh-cn"
 # WireGuard
-#PACKAGES="$PACKAGES luci-proto-wireguard"
+PACKAGES="$PACKAGES luci-proto-wireguard"
 
 # 网络组件
 
@@ -91,7 +91,7 @@ PACKAGES="$PACKAGES luci-i18n-appfilter-zh-cn"
 
 # 网卡支持
 # Android/iOS 共享网络
-#PACKAGES="$PACKAGES kmod-usb-net-rndis kmod-usb-net-ipheth usbmuxd"
+PACKAGES="$PACKAGES kmod-usb-net-rndis kmod-usb-net-ipheth usbmuxd"
 
 # 一些自己需要的内核组件
 PACKAGES="$PACKAGES kmod-usb-printer kmod-nft-tproxy"
@@ -99,13 +99,13 @@ PACKAGES="$PACKAGES kmod-usb-printer kmod-nft-tproxy"
 # 一些其他可能有用的包
 
 # zsh 终端
-#PACKAGES="$PACKAGES zsh"
+PACKAGES="$PACKAGES zsh"
 # Vim 完整版，带语法高亮
-#PACKAGES="$PACKAGES vim-fuller"
+PACKAGES="$PACKAGES vim-fuller"
 # X/Y/ZMODEM 文件传输
-#PACKAGES="$PACKAGES lrzsz"
+PACKAGES="$PACKAGES lrzsz"
 # OpenSSH
-# PACKAGES="$PACKAGES openssh-server openssh-client"
+PACKAGES="$PACKAGES openssh-server openssh-client"
 # Netdata 系统监控界面
 #PACKAGES="$PACKAGES netdata"
 
@@ -114,4 +114,4 @@ FILES="files"
 
 # 禁用 openssh-server 的 sshd 服务和 docker 的 dockerd 服务以防止冲突
 #DISABLED_SERVICES="dockerd"
-#make image PROFILE="$PROFILE" PACKAGES="$PACKAGES" FILES="$FILES" DISABLED_SERVICES="$DISABLED_SERVICES"
+make image PROFILE="$PROFILE" PACKAGES="$PACKAGES" FILES="$FILES" DISABLED_SERVICES="$DISABLED_SERVICES"
