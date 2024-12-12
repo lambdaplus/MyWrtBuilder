@@ -34,7 +34,7 @@ PACKAGES="$PACKAGES luci-i18n-ddns-go-zh-cn"
 # 常用的网络存储组件
 
 # 文件助手
-PACKAGES="$PACKAGES luci-app-fileassistant"
+# PACKAGES="$PACKAGES luci-app-fileassistant"
 # 硬盘休眠
 PACKAGES="$PACKAGES luci-i18n-hd-idle-zh-cn"
 # p910nd 打印服务器
@@ -50,7 +50,7 @@ PACKAGES="$PACKAGES luci-i18n-aria2-zh-cn"
 # FTP 服务器
 PACKAGES="$PACKAGES luci-i18n-vsftpd-zh-cn"
 # 端口转发
-PACKAGES="$PACKAGES luci-i18n-socat-zh-cn"
+# PACKAGES="$PACKAGES luci-i18n-socat-zh-cn"
 # TTYD
 PACKAGES="$PACKAGES luci-i18n-ttyd-zh-cn"
 # WechatPush
