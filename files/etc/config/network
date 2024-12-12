@@ -38,10 +38,11 @@ config interface 'wg'
 
 config wireguard_wg
 	option description 'Remote Peer'
-	option public_key 'Ck6o8jHhd9WrirydwDd4FcMKpEoPa/u9vQ2x2f7U6Vc='
+	option public_key 'sQ2OxeaLJeLqvbitOxHl6BZm0yfO2QENMmE3fJnkREA='
 	option preshared_key 'vPw4VQsR7hf+8WpV08qj+xIqxUWNTbQBYWPt02qIQ3g='
 	option route_allowed_ips '1'
 	option endpoint_port '51820'
 	option persistent_keepalive '25'
-	list allowed_ips '10.0.0.2/32'
+	option private_key 'YHs3aoi6v31g5sDOksDwnHGvC499Sr+WeBXUJeHp6kI='
+	list allowed_ips '10.0.0.0/32'
 

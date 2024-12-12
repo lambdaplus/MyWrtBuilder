@@ -3,9 +3,7 @@ config defaults
 	option input 'ACCEPT'
 	option output 'ACCEPT'
 	option forward 'ACCEPT'
-	option synflood_protect '1'
-	option fullcone '1'
-	option fullcone6 '1'
+	option flow_offloading '1'
 
 config zone
 	option name 'lan'
@@ -134,11 +132,6 @@ config include 'LUCKY_go'
 	option path '/var/etc/LUCKY.include'
 	option enabled '1'
 
-config include 'socat'
-	option type 'script'
-	option path '/var/etc/socat.include'
-	option reload '1'
-
 config rule
 	option name 'wg'
 	list proto 'udp'
@@ -221,5 +214,10 @@ config include 'passwall'
 config include 'passwall_server'
 	option type 'script'
 	option path '/var/etc/passwall_server.include'
+	option reload '1'
+
+config include 'socat'
+	option type 'script'
+	option path '/var/etc/socat.include'
 	option reload '1'
 
