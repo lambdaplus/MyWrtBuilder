@@ -90,6 +90,8 @@ PACKAGES="$PACKAGES luci-i18n-appfilter-zh-cn"
 # PACKAGES="$PACKAGES luci-i18n-wrtbwmon-zh-cn"
 
 # 网卡支持
+PACKAGES="$PACKAGES kmod-usb-net-asix kmod-usb-net-asix-ax88179"
+
 # Android/iOS 共享网络
 PACKAGES="$PACKAGES kmod-usb-net-rndis kmod-usb-net-ipheth usbmuxd"
 
