@@ -5,11 +5,13 @@ name: ImmortalWrt for AX3000T
 # Controls when the workflow will run
 on:
   # Allows you to run this workflow manually from the Actions tab
-  # workflow_dispatch:
-    # inputs:
-  schedule:
-    - cron: "0 0 * 1 *"
-
+  workflow_dispatch:
+    inputs:
+      release: 
+        description: 将编译出的镜像上传到 Release
+        required: false
+        default: 'true'
+         
 env:
   DOWNLOAD_BASE: https://downloads.immortalwrt.org
   VENDOR: immortalwrt
