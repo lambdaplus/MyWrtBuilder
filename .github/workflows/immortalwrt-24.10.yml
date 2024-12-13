@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: ImmortalWrt-24.10.0-rc1-x86_64
+name: ImmortalWrt_24.10_x86_64
 
 # Controls when the workflow will run
 on:
