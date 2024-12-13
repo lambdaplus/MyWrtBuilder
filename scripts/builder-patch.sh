@@ -3,7 +3,7 @@
 echo "Start Builder Patch !"
 echo "Current Path: $PWD"
 
-cd $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-x86-64.Linux-x86_64 || exit
+cd $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-mediatek-filogic.Linux-x86_64.tar.xz || exit
 
 # fix bios boot partition is under 1 MiB
 sed -i 's/256/1024/g' target/linux/x86/image/Makefile
@@ -30,5 +30,5 @@ sed -i "s/CONFIG_VMDK_IMAGES=y/# CONFIG_VMDK_IMAGES is not set/" .config
 sed -i "s/CONFIG_VHDX_IMAGES=y/# CONFIG_VHDX_IMAGES is not set/" .config
 
 # rootf=50 kernel=900
-sed -i "s/CONFIG_TARGET_KERNEL_PARTSIZE=32/CONFIG_TARGET_KERNEL_PARTSIZE=50/" .config
-sed -i "s/CONFIG_TARGET_ROOTFS_PARTSIZE=300/CONFIG_TARGET_ROOTFS_PARTSIZE=900/" .config
+#sed -i "s/CONFIG_TARGET_KERNEL_PARTSIZE=32/CONFIG_TARGET_KERNEL_PARTSIZE=50/" .config
+#sed -i "s/CONFIG_TARGET_ROOTFS_PARTSIZE=300/CONFIG_TARGET_ROOTFS_PARTSIZE=900/" .config
