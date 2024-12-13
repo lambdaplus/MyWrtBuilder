@@ -50,7 +50,7 @@ PACKAGES="$PACKAGES luci-i18n-aria2-zh-cn"
 # FTP 服务器
 PACKAGES="$PACKAGES luci-i18n-vsftpd-zh-cn"
 # 端口转发
-PACKAGES="$PACKAGES luci-i18n-socat-zh-cn"
+# PACKAGES="$PACKAGES luci-i18n-socat-zh-cn"
 # TTYD
 PACKAGES="$PACKAGES luci-i18n-ttyd-zh-cn"
 # WechatPush
