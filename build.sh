@@ -29,7 +29,7 @@ PACKAGES="$PACKAGES luci-theme-argon luci-i18n-argon-config-zh-cn"
 # frp 和 nps 内网穿透
 # PACKAGES="$PACKAGES luci-i18n-nps-zh-cn luci-i18n-frpc-zh-cn"
 # DDNS
-#PACKAGES="$PACKAGES luci-i18n-ddns-go-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-ddns-go-zh-cn"
 
 # 常用的网络存储组件
 
@@ -50,7 +50,7 @@ PACKAGES="$PACKAGES luci-theme-argon luci-i18n-argon-config-zh-cn"
 # FTP 服务器
 #PACKAGES="$PACKAGES luci-i18n-vsftpd-zh-cn"
 # 端口转发
-#PACKAGES="$PACKAGES luci-i18n-socat-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-socat-zh-cn"
 # TTYD
 #PACKAGES="$PACKAGES luci-i18n-ttyd-zh-cn"
 # WechatPush
