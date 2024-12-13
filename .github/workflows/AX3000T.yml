@@ -5,12 +5,10 @@ name: ImmortalWrt for AX3000T
 # Controls when the workflow will run
 on:
   # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-    inputs:
-      release: 
-        description: 将编译出的镜像上传到 Release
-        required: false
-        default: 'true'
+  # workflow_dispatch:
+    # inputs:
+  schedule:
+    - cron: "0 0 * 1 *"
 
 env:
   DOWNLOAD_BASE: https://downloads.immortalwrt.org
@@ -73,7 +71,7 @@ jobs:
           path: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-mediatek-filogic.Linux-x86_64/bin/targets/mediatek/filogic/*
 
       - name: Upload Firmware to Release
-        if: github.event.inputs.release == 'true'
+        # if: github.event.inputs.release == 'true'
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
