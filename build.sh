@@ -40,7 +40,7 @@ PACKAGES="$PACKAGES luci-i18n-hd-idle-zh-cn"
 # p910nd 打印服务器
 PACKAGES="$PACKAGES luci-i18n-p910nd-zh-cn"
 # GoWebDav
-PACKAGES="$PACKAGES luci-i18n-gowebdav-zh-cn"
+# PACKAGES="$PACKAGES luci-i18n-gowebdav-zh-cn"
 # Samba 网络共享
 PACKAGES="$PACKAGES luci-i18n-samba4-zh-cn"
 # qBittorrent 下载器
